@@ -10,7 +10,7 @@
           "instances": 1,
           "mem": 320,
           "domain": {
-            "uri": "$DOMAIN",
+            "uri": "$domain",
             "redirectHttps": true
           },
           "ssl": false,
