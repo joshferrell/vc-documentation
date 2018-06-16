@@ -55,7 +55,9 @@
     "walk": "^2.3.9"
   },
   "main": "app.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "jest": "^23.1.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mrvautin/openKB.git"
