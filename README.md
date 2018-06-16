@@ -1,4 +1,5 @@
 # Voice Computer Documentation
+[![Build Status](https://travis-ci.org/joshferrell/vc-documentation.svg?branch=master)](https://travis-ci.org/joshferrell/vc-documentation)
 
 ### Installation
 

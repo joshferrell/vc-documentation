@@ -14,10 +14,7 @@ jobs:
       - docker ps | grep -q vc-documentation
     deploy:
       provider: script
-      script:
-        - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-        - docker tag $DOCKER_IMAGE:$TRAVIS_COMMIT $DOCKER_USERNAME/$DOCKER_IMAGE:$TRAVIS_COMMIT
-        - docker push $DOCKER_USERNAME/$DOCKER_IMAGE:$TRAVIS_COMMIT
+      script: bash scripts/docker-hub-deploy.sh
       on:
           branch: master
   - stage: Deploy Production
@@ -26,7 +23,6 @@ jobs:
         - chmod +x sloppy
     deploy:
         provider: script
-        script:
-            - ./sloppy change -v docker_image:"$DOCKER_IMAGE:$TRAVIS_COMMIT" -v domain:"$DOMAIN" ./sloppy.json
+        script: bash scripts/production-deploy.sh
         on:
             branch: master
