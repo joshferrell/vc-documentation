@@ -28,7 +28,7 @@
         },
         "allow_voting": true,
         "google_analytics": "",
-        "theme": "",
+        "theme": "twitter",
         "show_logon": true,
         "add_header_anchors": false,
         "typeahead_search": true,
