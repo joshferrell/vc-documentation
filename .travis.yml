@@ -16,7 +16,8 @@ jobs:
       provider: script
       script:
         - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-        - docker push $DOCKER_IMAGE:$TRAVIS_COMMIT
+        - docker tag $DOCKER_IMAGE:$TRAVIS_COMMIT $DOCKER_USERNAME/$DOCKER_IMAGE:$TRAVIS_COMMIT
+        - docker push $DOCKER_USERNAME/$DOCKER_IMAGE:$TRAVIS_COMMIT
       on:
           branch: master
   - stage: Deploy Production
