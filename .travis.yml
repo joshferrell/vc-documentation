@@ -23,6 +23,7 @@ jobs:
         - chmod +x sloppy
     deploy:
         provider: script
+        skip_cleanup: true
         script: bash scripts/production-deploy.sh
         on:
             branch: master
