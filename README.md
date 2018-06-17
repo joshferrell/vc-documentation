@@ -1,6 +1,7 @@
 # Voice Computer Documentation
 [![Build Status](https://travis-ci.org/voice-computer/vc-documentation.svg?branch=master)](https://travis-ci.org/voice-computer/vc-documentation)
 [![Uptime Robot status](https://img.shields.io/uptimerobot/status/m778918918-3e92c097147760ee39d02d36.svg)](https://stats.uptimerobot.com/XQVmRtZzL)
+[![Docker Version](https://images.microbadger.com/badges/version/voicecomputer/vc-documentation.svg)](https://hub.docker.com/r/voicecomputer/vc-documentation/)
 
 Knowledge base for support documentation for voice computer.
 
