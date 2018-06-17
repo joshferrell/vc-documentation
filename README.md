@@ -1,5 +1,8 @@
 # Voice Computer Documentation
-[![Build Status](https://travis-ci.org/joshferrell/vc-documentation.svg?branch=master)](https://travis-ci.org/joshferrell/vc-documentation)
+[![Build Status](https://travis-ci.org/voice-computer/vc-documentation.svg?branch=master)](https://travis-ci.org/voice-computer/vc-documentation)
+[![Uptime Robot status](https://img.shields.io/uptimerobot/status/m778918918-3e92c097147760ee39d02d36.svg)](https://stats.uptimerobot.com/XQVmRtZzL)
+
+Knowledge base for support documentation for voice computer.
 
 ### Installation
 
@@ -43,74 +46,6 @@ Valid `order` values are: `-1` or `1`
 
 `-1` = decending order
 
-
-### Database setup
-
-By default, `openKB` uses an embedded Javascript database called [nedb](https://github.com/louischatriot/nedb) for easy installation. This works really well for small to medium sized applications but
-has it's limitations if you wanted to scale your application to handle many articles and concurrent users. For this reason, `openKB` also supports using a MongoDB server by simply changing the config file.
-
-Here is the `config.json` for the embedded database (NeDB):
-
-``` javascript
-"database": {
-    "type": "embedded"
-}
-```
-
-Here is an example `config.json` for a MongoDB server. You can use your own localhost MongoDB instance or you may choose a hosted MongoDB server like [mLab](https://mlab.com/) or [Atlas](https://www.mongodb.com/cloud/atlas).
-
-``` javascript
-"database": {
-    "type": "mongodb",
-    "connection_string": "mongodb://127.0.0.1:27017/openkb"
-}
-```
-
-Alternately, for security reasons, you can use the Node environment variable (below) to store your MongoDB connection string.
-``` javascript
-MONGODB_CONNECTION_STRING
-```
-
-### Public API
-
-An optional public API can be enabled through `/settings` to allow inserting of documents by HTTP POST using services like IFTTT etc.
-
-**Note:The API is disabled by default**
-
-Once turned on, the API is hosted on route: `example.com/api/newArticle` via POST of a Object. The JSON schema is:
-
-``` javascript
-    'type': 'object',
-    'properties': {
-        'api_auth_token': {'type': 'string'},
-        'kb_title': {'type': 'string'},
-        'kb_body': {'type': 'string'},
-        'kb_permalink': {'type': 'string'},
-        'kb_published': {'type': 'boolean'},
-        'kb_keywords': {'type': 'string'},
-        'kb_author_email': {'type': 'string'},
-        'kb_password': {'type': 'string'},
-        'kb_featured': {'type': 'boolean'},
-        'kb_seo_title': {'type': 'string'},
-        'kb_seo_description': {'type': 'string'}
-    },
-    'required': ['api_auth_token', 'kb_title', 'kb_body', 'kb_author_email', 'kb_published']
-```
-
-**Note: An API access token is required to be able to use the API. If the API is turned on without a token, all requests will reject. Please use a hard to guess token**
-
-The return Object from the API will be as follows:
-
-``` javascript
-{
-  "result": false,
-  "errors": [
-    "Any error messages"
-  ]
-}
-```
-
-The `errors` value will have any validation or error message which have occured. The `result` is an approval boolean. Eg: `true` was successful and `false` wasn't.
 
 ### Migrating from NeDB to MongoDB (experimental)
 
