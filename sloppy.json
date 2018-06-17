@@ -10,8 +10,7 @@
           "instances": 1,
           "mem": 320,
           "domain": {
-            "uri": "$domain",
-            "redirectHttps": true
+            "uri": "$domain"
           },
           "ssl": false,
           "port_mappings": [
