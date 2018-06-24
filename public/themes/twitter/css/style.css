@@ -3,7 +3,7 @@ html, body {
 }
 
 body{
-    font-family: "Gotham Narrow SSm", "Helvetica Neue", Helvetica, sans-serif;
+    font-family: poppins, "Helvetica Neue", Helvetica, sans-serif;
 }
 
 html{
@@ -31,9 +31,9 @@ h2, .h2 {
     padding-left: 15px;
 }
 
-.searchBar{        
+.searchBar{
     height: 300px;
-    background: transparent url(/themes/twitter/images/headerBg.jpg) no-repeat top left;
+    background: #efeff1;
     background-size: cover;
     text-align: center;
     margin-bottom: 10px;
@@ -43,12 +43,12 @@ h2, .h2 {
     font-size: 40px;
     font-weight: 300;
     margin: 75px 0 10px;
-    color: #fff;
+    color: #202D4A;
     line-height: 1;
 }
 
 .searchBar a{
-    color: #fff;
+    color: #202D4A;
 }
 
 p.subheading {
@@ -68,8 +68,8 @@ p.subheading {
 }
 
 .featuredPanel{
-    height: 150px; 
-    text-align: center;  
+    height: 150px;
+    text-align: center;
 }
 
 .panel-default {
@@ -121,8 +121,8 @@ p.subheading {
     z-index: 9999;
     padding-top: 10px;
     height: 50px;
-    bottom: 0px; 
-    width: 100%; 
+    bottom: 0px;
+    width: 100%;
     text-align: center;
     font-size: 22px;
     color: white;
@@ -150,10 +150,84 @@ p.subheading {
     z-index: 1000;
 }
 
+.panel-default {
+	border: none;
+	box-shadow: none;
+}
+
+.searchBar h1 {
+	font-weight: 700;
+}
+
+#search_form {
+	margin-top: 24px;
+}
+
+#search_form input {
+	border-radius: 0;
+	border: none;
+}
+
+#search_form #btn_search {
+	border-radius: 0;
+	color: white;
+	background: #202d4a;
+	border: none;
+	padding: 10px 24px;
+}
+
+#search_form #btn_search:hover {
+	background: rgba(32, 45, 74, .8);
+}
+
 .panel-default>.panel-heading {
-    color: #333;
-    background: #f5f8fa;
-    border-color: #e3eaee;
+    color: #202D4A;
+    background: #eeeff1;
+    border: none;
+}
+
+.panel-default > .panel-body {
+	padding: 16px 0;
+	background: #fafafa;
+}
+
+.body_text p {
+	font-size: 1.2rem;
+}
+
+p.subheading {
+	color: #4d586f;
+	text-align: center;
+	line-height: 1.25;
+}
+
+.list-group {
+	margin: 0;
+}
+
+.list-group-item {
+	border: none;
+	background: transparent;
+	padding: 0;
+}
+
+.list-group-item h4 {
+	margin: 0;
+}
+
+.list-group-item a {
+	display: block;
+	padding: 16px;
+}
+
+#searchResult {
+	background: white;
+	margin: 0 16px;
+	padding: 16px;
+	text-align: left;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
+	left: -15px;
+	border-radius: 4px;
 }
 
 .show_footer{
