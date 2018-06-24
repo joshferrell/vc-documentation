@@ -10,8 +10,6 @@ jobs:
   - stage: Build Docker Container
     script:
       - docker build -t $DOCKER_IMAGE:$TRAVIS_COMMIT .
-      - docker run -d $DOCKER_IMAGE:$TRAVIS_COMMIT
-      - docker ps | grep -q vc-documentation
     deploy:
       provider: script
       script: bash scripts/docker-hub-deploy.sh
