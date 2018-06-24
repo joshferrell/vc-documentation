@@ -7,8 +7,8 @@
         {
           "id": "open-kb",
           "image": "$docker_image",
-          "instances": 1,
-          "mem": 320,
+          "instances": 2,
+          "mem": 256,
           "domain": {
             "uri": "$domain"
           },
@@ -20,21 +20,10 @@
           ],
           "volumes": [
             {
-              "container_path": "/var/openKB/data",
+              "container_path": "/var/openKB/uploads",
               "size": "8GB"
             }
-          ],
-          "health_checks": [
-            {
-              "type": "HTTP",
-              "path": "/",
-              "timeout_seconds": 20,
-              "interval_seconds": 60,
-              "max_consecutive_failures": 3,
-              "grace_period_seconds": 300
-            }
-          ],
-          "logging": null
+		  ]
         }
       ]
     }
