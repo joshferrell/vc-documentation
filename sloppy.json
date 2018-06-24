@@ -7,7 +7,7 @@
         {
           "id": "open-kb",
           "image": "$docker_image",
-          "instances": 2,
+          "instances": 1,
           "mem": 256,
           "domain": {
             "uri": "$domain"
@@ -17,7 +17,13 @@
             {
               "container_port": 4444
             }
-          ]
+		  ],
+		  "volumes": [
+            {
+              "container_path": "/var/openKB/data",
+              "size": "8GB"
+		    }
+		  ],
         }
       ]
     }
