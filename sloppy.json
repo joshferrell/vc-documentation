@@ -1,31 +1,23 @@
 {
-  "project": "voice-computer",
-  "services": [
-    {
-      "id": "vc-docs",
-      "apps": [
-        {
-          "id": "open-kb",
-          "image": "$docker_image",
-          "instances": 1,
-          "mem": 256,
-          "domain": {
-            "uri": "$domain"
-          },
-          "ssl": false,
-          "port_mappings": [
-            {
-              "container_port": 4444
-            }
-		  ],
-		  "volumes": [
-            {
-              "container_path": "/var/openKB/data",
-              "size": "8GB"
-		    }
-		  ],
-        }
-      ]
-    }
-  ]
+    "project": "voice-computer",
+    "services": [{
+        "id": "vc-docs",
+        "apps": [{
+            "id": "open-kb",
+            "image": "$docker_image",
+            "instances": 1,
+            "mem": 256,
+            "domain": {
+                "uri": "$domain"
+            },
+            "ssl": false,
+            "port_mappings": [{
+                "container_port": 4444
+            }],
+            "volumes": [{
+                "container_path": "/var/openKB/data",
+                "size": "8GB"
+            }]
+        }]
+    }]
 }
