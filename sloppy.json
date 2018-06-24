@@ -17,13 +17,7 @@
             {
               "container_port": 4444
             }
-          ],
-          "volumes": [
-            {
-              "container_path": "/var/openKB/uploads",
-              "size": "8GB"
-            }
-		  ]
+          ]
         }
       ]
     }
