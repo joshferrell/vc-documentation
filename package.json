@@ -9,7 +9,7 @@
     "snyk-protect": "snyk protect",
     "prepublish": "npm run snyk-protect",
     "uglify": "node bin/uglify.js",
-	"test": "echo no tests && exit 0"
+    "test": "echo no tests && exit 0"
   },
   "dependencies": {
     "async": "^2.0.1",

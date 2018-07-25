@@ -51,6 +51,7 @@
     <link rel="stylesheet" href="{{app_context}}/stylesheets/bootstrap-tokenfield.css">
     <link rel="stylesheet" href="{{app_context}}/stylesheets/jpushmenu.css">
     <link rel='icon' href='{{app_context}}/favicon.png' />
+	{{> twitter/views/partials/styles}}
     <script src="{{app_context}}/jquery/jquery.min.js"></script>
     <script>{{{state}}}</script>
     <script src="{{app_context}}/bootstrap/js/bootstrap.min.js"></script>
@@ -76,28 +77,38 @@
     {{/ifCond}}
     <script src="{{app_context}}/javascripts/jpushmenu.js"></script>
     <script src="{{app_context}}/javascripts/openKB.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#mobileContainer').hide();
+			$('#closeButton').hide();
+			$('#toggleMenu').click(function() {
+				$('#mobileContainer').toggle();
+				$('body').toggleClass('no-scroll');
+				$('#closeButton').toggle();
+				$('#openButton').toggle();
+			});
+		});
+	</script>
     {{#ifCond user_page '===' true}}
       {{#if config.settings.google_analytics}}
         {{{config.settings.google_analytics}}}
       {{/if}}
     {{/ifCond}}
   </head>
-  <body class="{{show_footer}}">
-    <!-- Static navbar -->
-    <div class="container-fluid">
-      {{{body}}}
-    </div>
-    <input type="hidden" value="{{app_context}}" id="app_context">
-    <input type="hidden" value="{{config.settings.links_blank_page}}" id="blank_links">
-    <input type="hidden" id="input_notify_message" value="{{message}}">
-    <input type="hidden" id="input_notify_message_type" value="{{message_type}}">
-    <div id="notify_message"></div>
-    {{#if show_footer}}
-      <footer class="footer">
-        <div class="container">
-          <p class="text-muted text-center">{{__ "Powered by"}} <a href="https://openkb.markmoffat.com/" target="_blank">openKB</a></p>
-        </div>
-      </footer>
-    {{/if}}
+  <body>
+  	<div class="sc-fMiknA dWRGF" data-reactroot="">
+		<div class="sc-kpOJdX hkXopg">
+			{{> twitter/views/partials/global-nav}}
+			{{{body}}}
+			<input type="hidden" value="{{app_context}}" id="app_context">
+		    <input type="hidden" value="{{config.settings.links_blank_page}}" id="blank_links">
+		    <input type="hidden" id="input_notify_message" value="{{message}}">
+		    <input type="hidden" id="input_notify_message_type" value="{{message_type}}">
+		    <div id="notify_message"></div>
+		    {{#if show_footer}}
+		      {{> twitter/views/partials/footer}}
+		    {{/if}}
+		</div>
+	</div>
   </body>
 </html>
